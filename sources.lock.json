@@ -46,5 +46,29 @@
       "git_blob_sha": "d4204881c3f79f39151a53a6aae476b188a8c51f",
       "modified": false
     }
+  ],
+  "research_references": [
+    {
+      "repository": "obra/the-elements-of-style",
+      "commit": "05fc4f0d2b97b7c042dd9949ad658568e4a1324e",
+      "path": "skills/writing-clearly-and-concisely/SKILL.md",
+      "git_blob_sha": "80f1c732645c190f5df1ab1cb7e967cd8d551360",
+      "url": "https://github.com/obra/the-elements-of-style/blob/05fc4f0d2b97b7c042dd9949ad658568e4a1324e/skills/writing-clearly-and-concisely/SKILL.md",
+      "use": "general writing principles; independently written Chinese skill; no source text copied"
+    },
+    {
+      "repository": "claude-dev-suite/claude-dev-suite",
+      "commit": "aa861d9a7eb12fd3d18a78358abf5ca07c3ab88f",
+      "path": "skills/gamedev/2d-art/vfx-2d/SKILL.md",
+      "url": "https://github.com/claude-dev-suite/claude-dev-suite/blob/aa861d9a7eb12fd3d18a78358abf5ca07c3ab88f/skills/gamedev/2d-art/vfx-2d/SKILL.md",
+      "use": "reviewed candidate; not imported"
+    },
+    {
+      "repository": "msitarzewski/agency-agents",
+      "commit": "e31d699e06e78056489bb72282b754dfaa4b254a",
+      "path": "game-development/unreal-engine/unreal-technical-artist.md",
+      "url": "https://github.com/msitarzewski/agency-agents/blob/e31d699e06e78056489bb72282b754dfaa4b254a/game-development/unreal-engine/unreal-technical-artist.md",
+      "use": "reviewed candidate; not imported"
+    }
   ]
 }

@@ -1,0 +1,4 @@
+interface:
+  display_name: "简单中文解释"
+  short_description: "把技术说明改成看得懂的短句和小表格，讲清作用、修改方法和实际结果"
+  default_prompt: "使用 $plain-chinese-explanations 用简单中文解释，先讲结果，少用术语，需要对比时用小表格。"

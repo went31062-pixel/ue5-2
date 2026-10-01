@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>一层特效图卡</title>
+<style>
+:root{color-scheme:light;--ink:#1e2a35;--sub:#566572;--line:#d9e3e8;--blue:#007596}
+*{box-sizing:border-box}body{margin:0;background:#f3f6f8;color:var(--ink);font:16px/1.65 "Microsoft YaHei","PingFang SC",sans-serif}
+main{max-width:1120px;margin:auto;padding:32px 24px 48px}h1{font-size:30px;line-height:1.3;margin:8px 0 10px}h2{font-size:19px;margin:0 0 12px}p{margin:8px 0}.sub{color:var(--sub)}.tag{font-size:13px;color:var(--blue);font-weight:700;letter-spacing:.05em}
+.note{padding:12px 16px;border-left:4px solid #1685a3;background:#eaf5f8;border-radius:4px;margin:18px 0}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:20px 0}.picker,button{background:white;border:1px solid var(--line);border-radius:9px;padding:9px 14px;font:inherit;cursor:pointer}.picker:hover,button:hover{border-color:#007596}.picker input{display:none}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card,.section{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h2{font-size:18px;margin-bottom:3px}.card p{font-size:14px;color:var(--sub);min-height:46px;margin:0 0 12px}
+.stage{width:100%;height:228px;border-radius:10px;background:#121c2b;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.stage svg{width:208px;height:208px}.stage img{max-width:100%;max-height:100%;object-fit:contain;display:block}.gray{filter:grayscale(1)}.mask{background:#08090b}
+.status{margin-top:10px;font-size:13px;color:var(--sub)}.section{margin-top:18px}.controls{display:flex;align-items:center;gap:18px;flex-wrap:wrap}input[type=range]{width:min(260px,100%);accent-color:#087b9a}.controlText{font-size:14px}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.timecell{text-align:center;background:#f5f8fa;border-radius:10px;padding:12px}.timecell svg{display:block;margin:6px auto;width:120px;height:120px;background:#121c2b;border-radius:8px}.timecell small{display:block;color:var(--sub)}
+table{width:100%;border-collapse:collapse;font-size:15px}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--sub);font-weight:600}th:first-child,td:first-child{white-space:nowrap;width:15%}tr:last-child td{border-bottom:0}
+#referenceBox{margin-bottom:18px}#referenceBox img{display:block;max-height:300px;max-width:100%;margin:10px auto}.footer{font-size:13px;color:var(--sub);margin-top:20px}
+[hidden]{display:none!important}@media(max-width:720px){main{padding:22px 14px}.grid{grid-template-columns:1fr}.stage{height:210px}.timeline{gap:6px}.timecell{padding:8px 2px}.timecell svg{width:88px;height:88px}table{font-size:14px}th,td{padding:8px}h1{font-size:26px}}
+</style>
+</head>
+<body>
+<main>
+<span class="tag">每次理解一层</span>
+<h1 id="title">向外扩散的圆环</h1>
+<p id="summary">先看颜色，再看去色后的轮廓。白环格单独说明形状来源。</p>
+<div class="note" id="sourceNote">当前是原创结构示意，没有游戏素材，也没有真实 UE 资产。</div>
+<div class="toolbar">
+<label class="picker">选整体参考<input id="referenceInput" type="file" accept="image/png,image/jpeg,image/webp"></label>
+<label class="picker">选单层截图<input id="layerInput" type="file" accept="image/png,image/jpeg,image/webp"></label>
+<label class="picker">选真实贴图<input id="textureInput" type="file" accept="image/png,image/jpeg,image/webp"></label>
+<button id="reset" type="button">回到示意</button>
+<span class="sub" style="font-size:13px">本地预览，不上传图片</span>
+</div>
+<div id="referenceBox" class="section" hidden>
+<h2>整体参考</h2><p class="sub">这张图可能包含多层，不能当作已经分离的单层。</p><img id="referenceImage" alt="用户提供的整体参考">
+</div>
+<div class="grid">
+<article class="card">
+<h2 id="colorHeading">彩色示意</h2><p>看颜色与可见轮廓。</p>
+<div class="stage" id="colorStage"><svg viewBox="0 0 220 220" role="img" aria-label="蓝色圆环结构示意"><circle class="glow" cx="110" cy="110" r="66" fill="none" stroke="#30d9ff" stroke-width="20" opacity=".18" style="filter:blur(6px)"/><circle class="ring" cx="110" cy="110" r="66" fill="none" stroke="#71e9ff" stroke-width="10"/></svg></div>
+<div class="status" id="colorStatus">示例：一层蓝色圆环</div>
+</article>
+<article class="card">
+<h2 id="grayHeading">同图去色</h2><p>同一图、同一尺寸；只改显示颜色。</p>
+<div class="stage gray" id="grayStage"><svg viewBox="0 0 220 220" role="img" aria-label="同一圆环的去色预览"><circle class="glow" cx="110" cy="110" r="66" fill="none" stroke="#30d9ff" stroke-width="20" opacity=".18" style="filter:blur(6px)"/><circle class="ring" cx="110" cy="110" r="66" fill="none" stroke="#71e9ff" stroke-width="10"/></svg></div>
+<div class="status">去色结果不是遮罩贴图</div>
+</article>
+<article class="card">
+<h2 id="textureHeading">遮罩示意</h2><p id="textureCaption">白环给形状；黑底表示示例中的零值。</p>
+<div class="stage mask" id="textureStage"><svg viewBox="0 0 220 220" role="img" aria-label="白色圆环遮罩示意"><circle class="ring" cx="110" cy="110" r="66" fill="none" stroke="white" stroke-width="10"/></svg></div>
+<div class="status" id="textureStatus">原创示意，不是从参考中提取的贴图</div>
+</article>
+</div>
+<section class="section" id="controlsSection">
+<h2>只试一个变化：环更细或更厚</h2>
+<div class="controls"><label for="width">圆环宽度</label><input id="width" type="range" min="3" max="24" value="10"><output id="widthValue" for="width">10</output><span class="controlText sub" id="controlNote">只修改示意图，不修改你提供的图片。</span></div>
+</section>
+<section class="section" id="timelineSection">
+<h2>运动示意：出现 → 扩大 → 消失</h2>
+<p class="sub">下面是试做方案。没有视频时，不能把它当成参考的真实时间变化。</p>
+<div class="timeline">
+<div class="timecell"><strong>开始</strong><svg viewBox="0 0 120 120" role="img" aria-label="开始时小圆环"><circle class="timeRing" cx="60" cy="60" r="16" fill="none" stroke="#71e9ff" stroke-width="5"/></svg><small>小、较清楚</small></div>
+<div class="timecell"><strong>中间</strong><svg viewBox="0 0 120 120" role="img" aria-label="中间圆环变大变淡"><circle class="timeRing" cx="60" cy="60" r="40" fill="none" stroke="#71e9ff" stroke-width="5" opacity=".6"/></svg><small>变大、变淡</small></div>
+<div class="timecell"><strong>结束</strong><svg viewBox="0 0 120 120" role="img" aria-label="结束时圆环已经消失"></svg><small>透明，已消失</small></div>
+</div>
+</section>
+<section class="section">
+<h2>这一层各部分的作用</h2>
+<table><thead><tr><th>项目</th><th>示例做法</th><th>负责什么</th></tr></thead><tbody id="roleBody">
+<tr><td>贴图</td><td>白色圆环，或材质算圆环</td><td>轮廓</td></tr>
+<tr><td>材质</td><td>上蓝色，让背景透出来</td><td>颜色与透明度</td></tr>
+<tr><td>粒子</td><td>一个圆环变大、变淡</td><td>扩散与消失</td></tr>
+<tr><td>作用</td><td>向外的冲击</td><td>告诉你冲击向周围传开</td></tr>
+</tbody></table>
+<p class="sub" id="tableNote">表格是圆环示例，选择图片不会自动分析或更新。</p>
+</section>
+<section class="section" id="changeSection" hidden>
+<h2>自己改这一层</h2><table><thead><tr><th>想改变什么</th><th>改哪里</th><th>预计变化</th></tr></thead><tbody id="changeBody"></tbody></table>
+</section>
+<section class="section">
+<h2>这层可以用在哪里</h2>
+<table><thead><tr><th>方向</th><th>这层的位置/作用</th><th>先改什么</th></tr></thead><tbody id="useBody">
+<tr><td>地面重击</td><td>贴地冲击波</td><td>朝向与扩散范围</td></tr>
+<tr><td>魔法蓄力</td><td>向中心收拢的能量环</td><td>把扩大改为缩小</td></tr>
+<tr><td>护盾受击</td><td>受击位置的波纹</td><td>出现位置与表面适配</td></tr>
+</tbody></table>
+</section>
+<p class="footer">图卡只帮助理解；不是生产贴图、真实参数测量或自动拆层工具。默认图为原创示意。图片选择在当前浏览器本地处理。</p>
+</main>
+<script id="card-input" type="application/json">{"title":"向外扩散的圆环","reference":null,"layer":null,"texture":null,"analysis":null}</script>
+<script>
+"use strict";
+const input=JSON.parse(document.getElementById("card-input").textContent);
+const state={reference:input.reference,layer:input.layer,texture:input.texture};
+const $=id=>document.getElementById(id);
+const templates={color:$("colorStage").innerHTML,gray:$("grayStage").innerHTML,texture:$("textureStage").innerHTML};
+$("title").textContent=input.title||"向外扩散的圆环";document.title=$("title").textContent+" · 一层特效图卡";
+function putImage(target,item,alt){target.replaceChildren();const img=document.createElement("img");img.src=item.data_url;img.alt=alt;target.append(img);}
+function fillRows(bodyId,rows,keys){const body=$(bodyId);body.replaceChildren();for(const row of rows){const tr=document.createElement("tr");for(const key of keys){const td=document.createElement("td");td.textContent=row[key];tr.append(td);}body.append(tr);}}
+if(input.analysis){
+$("summary").textContent=input.analysis.summary;
+fillRows("roleBody",input.analysis.rows,["item","method","role"]);
+fillRows("changeBody",input.analysis.changes,["goal","where","result"]);
+fillRows("useBody",input.analysis.uses,["direction","role","change"]);
+$("changeSection").hidden=false;$("controlsSection").hidden=true;$("timelineSection").hidden=true;
+$("tableNote").textContent="说明由分析者提供；观察、推测和已核对须在表格里注明。图卡本身不会自动分析图片。";
+}
+function render(){
+$("referenceBox").hidden=!state.reference;if(state.reference)$("referenceImage").src=state.reference.data_url;else $("referenceImage").removeAttribute("src");
+if(state.layer){putImage($("colorStage"),state.layer,"用户提供的单层截图，是否隔离需核对");putImage($("grayStage"),state.layer,"同一截图的去色预览");$("colorHeading").textContent="提供的单层截图";$("colorStatus").textContent="用户提供：仍需核对是否含其他层";}
+else{$("colorStage").innerHTML=templates.color;$("grayStage").innerHTML=templates.gray;$("colorHeading").textContent="彩色示意";$("colorStatus").textContent="原创圆环示意，没有自动提取参考图层";}
+if(state.texture){putImage($("textureStage"),state.texture,"用户提供的贴图预览");$("textureHeading").textContent="提供的贴图";$("textureCaption").textContent="原图预览；使用 R 还是 Alpha 需要另行核对。";$("textureStatus").textContent="不从成片或去色图恢复原始遮罩";}
+else{$("textureStage").innerHTML=templates.texture;$("textureHeading").textContent="遮罩示意";$("textureCaption").textContent="白环给形状；黑底表示示例中的零值。";$("textureStatus").textContent="原创示意，不是从参考中提取的贴图";}
+$("sourceNote").textContent=state.layer?"单层图由用户提供，需核对是否真的独立。去色只改变显示；下方表格与运动仍是圆环示例。":state.reference?"已有整体参考；尚无独立单层图，下面仍是圆环结构示意，不是从参考中分离的图层。":"当前是原创结构示意，没有游戏素材，也没有真实 UE 资产。";
+updateWidth();
+}
+function updateWidth(){const w=Number($("width").value);$("widthValue").value=String(w);document.querySelectorAll(".ring").forEach(e=>e.setAttribute("stroke-width",String(w)));document.querySelectorAll(".glow").forEach(e=>e.setAttribute("stroke-width",String(w+10)));document.querySelectorAll(".timeRing").forEach(e=>e.setAttribute("stroke-width",String(w/2)));}
+for(const kind of ["reference","layer","texture"]){$(kind+"Input").addEventListener("change",event=>{const file=event.target.files[0];if(!file)return;if(!["image/png","image/jpeg","image/webp"].includes(file.type)){alert("请选择 PNG、JPG 或 WebP 图片。");return;}const reader=new FileReader();reader.onload=()=>{state[kind]={data_url:reader.result};render();};reader.onerror=()=>alert("没有读到图片，请重新选择。");reader.readAsDataURL(file);});}
+$("width").addEventListener("input",updateWidth);
+$("reset").addEventListener("click",()=>{state.reference=null;state.layer=null;state.texture=null;for(const kind of ["reference","layer","texture"])$(kind+"Input").value="";$("width").value="10";render();});
+render();
+</script>
+</body>
+</html>
