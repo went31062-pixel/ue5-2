@@ -32,12 +32,20 @@
 
 图卡默认是原创结构示意，不是游戏截图，也不是已经制作好的 UE 资产。可以选择本地参考图、真实单层截图和真实贴图；选择的图片仅在本地显示。
 
-## 仓库中的两个 skill
+## 从分析到实际制作
+
+流程是：**参考观察 → 原理解释 → 制作资产 → UE 实际预览 → 你确认**。每轮只完成约定的一小层，确认以后才进入下一层。
+
+- [第一轮：能运行的金色细三角](examples/triangle-line-ue55/README.md)：PNG 遮罩、UE5.5 原生材质、一次发射的 Niagara 系统、实际短片和参数表。已在 UE5.5.4 编译、保存、重新加载并验证。
+- 要求实际文件时，使用 `$ue55-vfx-layer-production`，接上分析流程；不用一次加载多个 skill。
+
+## 仓库中的 skill
 
 | 入口 | 用途 |
 | --- | --- |
 | [ue5-vfx-step-by-step](.agents/skills/ue5-vfx-step-by-step/SKILL.md) | 单层分析、图卡、修改、用途推荐；需要时再指导制作 |
 | [plain-chinese-explanations](.agents/skills/plain-chinese-explanations/SKILL.md) | 简单中文、短表格、术语解释和明确操作 |
+| [ue55-vfx-layer-production](.agents/skills/ue55-vfx-layer-production/SKILL.md) | 每轮做出一层真实资产，编译保存、重新加载、录制 UE 预览后确认 |
 
 制作时只读取当前需要的贴图、材质或 Niagara 参考。原始来源、检索结果和取舍见 [SOURCES.md](SOURCES.md)。
 
@@ -45,6 +53,6 @@
 
 图卡生成脚本只需要 Python 3，使用方法见 [图卡参考](.agents/skills/ue5-vfx-step-by-step/references/visual-cards.md)。它把你已有的图片放进本地 HTML，使用浏览器去色预览；不改原图、不上传，也不会自动分离出游戏中的真实图层。
 
-本仓库提供工作方法和示意图，没有 UE 编辑器连接或可运行的 `.uasset`。实际节点、参数和画面需要按你的 UE 版本验证。原始 Niagara skill 标注目标 UE 5.8，不能当作所有版本已测试。
+仓库包括工作方法、结构示意和金色细三角的可运行 `.uasset` / `.umap`。细三角实测版本为 UE5.5.4；其他例子仍是学习示意。原始 Niagara skill 标注目标 UE 5.8，不能当作其他版本已测试。Skill 不会凭空提供编辑器连接，实际制作须使用环境中的真实工具或引擎 API。
 
 整理日期：2026-10-01。保留之前采用来源的 Apache-2.0 LICENSE 与 NOTICE。

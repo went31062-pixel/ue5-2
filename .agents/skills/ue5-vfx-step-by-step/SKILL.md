@@ -52,6 +52,8 @@ description: 用简单中文分析 UE5 特效参考，每次只理解一层的�
 
 ## 用户需要制作时
 
+用户要求生成真实贴图、材质、模型或粒子资产时，转到 [UE5.5 单层制作](../ue55-vfx-layer-production/SKILL.md)，完成本轮资产和 UE 预览，不只给操作建议。沿用用户已经确定的版本、范围和逐层确认方式。
+
 按问题读取一份参考：
 - 形状、噪声、透明通道：[references/textures.md](references/textures.md)。
 - 上色、发光、透明度、消融：[references/materials.md](references/materials.md)。

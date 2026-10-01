@@ -1,0 +1,4 @@
+interface:
+  display_name: "UE5.5 单层特效制作"
+  short_description: "把参考中的一小层做成真实贴图、材质和 Niagara，运行后逐层确认"
+  default_prompt: "使用 $ue55-vfx-layer-production，把已选的一小层做成 UE5.5 可用资产。简单解释，编译保存并录制真实 UE 预览，等我确认后再做下一层。"

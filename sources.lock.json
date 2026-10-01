@@ -70,5 +70,31 @@
       "url": "https://github.com/msitarzewski/agency-agents/blob/e31d699e06e78056489bb72282b754dfaa4b254a/game-development/unreal-engine/unreal-technical-artist.md",
       "use": "reviewed candidate; not imported"
     }
-  ]
+  ],
+  "production_round": {
+    "date": "2026-10-01",
+    "skill": "ue55-vfx-layer-production",
+    "origin": "original scoped workflow and assets",
+    "engine": "5.5.4-40574608",
+    "example": "examples/triangle-line-ue55",
+    "api_references": [
+      {
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/MaterialEditingLibrary?application_version=5.5",
+        "use": "native material authoring"
+      },
+      {
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/FXConverterUtilitiesLibrary?application_version=5.5",
+        "use": "native converter context for Niagara authoring"
+      },
+      {
+        "source": "installed UE5.5.4 Niagara and MovieRenderPipeline APIs",
+        "use": "module paths, enum switches, simulation cache, native frame output; engine source not copied"
+      }
+    ],
+    "verification": [
+      "verification.json",
+      "Preview/render-report.json"
+    ],
+    "private_reference_media_uploaded": false
+  }
 }

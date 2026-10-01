@@ -1,0 +1,68 @@
+{
+  "engine": "5.5.4-40574608+++UE5+Release-5.5",
+  "input_results": [
+    {
+      "parameter": "Life Cycle Mode",
+      "accepted": true
+    },
+    {
+      "parameter": "Loop Behavior",
+      "accepted": true
+    },
+    {
+      "parameter": "Inactive Response",
+      "accepted": true
+    },
+    {
+      "parameter": "Loop Duration",
+      "accepted": true
+    },
+    {
+      "parameter": "Spawn Count",
+      "accepted": true
+    },
+    {
+      "parameter": "Spawn Time",
+      "accepted": true
+    },
+    {
+      "parameter": "Lifetime",
+      "accepted": true
+    },
+    {
+      "parameter": "Sprite Size Mode",
+      "accepted": true
+    },
+    {
+      "parameter": "Sprite Size",
+      "accepted": true
+    }
+  ],
+  "assets": {
+    "T_TriangleLine": "/Game/TriangleLine/T_TriangleLine.T_TriangleLine",
+    "M_TriangleGold": "/Game/TriangleLine/M_TriangleGold.M_TriangleGold",
+    "MI_TriangleGold": "/Game/TriangleLine/MI_TriangleGold.MI_TriangleGold",
+    "NS_TriangleLine": "/Game/TriangleLine/NS_TriangleLine.NS_TriangleLine",
+    "L_TriangleTrial": "/Game/TriangleLine/L_TriangleTrial",
+    "LS_TriangleTrial": "/Game/TriangleLine/LS_TriangleTrial.LS_TriangleTrial"
+  },
+  "parameters": {
+    "spawn_count": 1,
+    "spawn_time_seconds": 0,
+    "lifetime_seconds": 2,
+    "size_cm": [
+      300,
+      300
+    ],
+    "fade_in_seconds": 0.2,
+    "hold_seconds": 1.5,
+    "fade_out_seconds": 0.3,
+    "motion": "stationary horizontal plane",
+    "color_linear": [
+      1.0,
+      0.48,
+      0.06
+    ],
+    "glow": 8.0
+  }
+}

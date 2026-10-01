@@ -1,0 +1,71 @@
+{
+  "source": "real UE rendered PNG frames, unchanged",
+  "samples": [
+    {
+      "frame": 0,
+      "frame_start_seconds": 0.0,
+      "gold_pixels": 0,
+      "mean_red_over_blue": 0.0
+    },
+    {
+      "frame": 2,
+      "frame_start_seconds": 0.067,
+      "gold_pixels": 7483,
+      "mean_red_over_blue": 81.865
+    },
+    {
+      "frame": 5,
+      "frame_start_seconds": 0.167,
+      "gold_pixels": 8254,
+      "mean_red_over_blue": 54.217
+    },
+    {
+      "frame": 30,
+      "frame_start_seconds": 1.0,
+      "gold_pixels": 10999,
+      "mean_red_over_blue": 48.348
+    },
+    {
+      "frame": 50,
+      "frame_start_seconds": 1.667,
+      "gold_pixels": 11726,
+      "mean_red_over_blue": 47.921
+    },
+    {
+      "frame": 54,
+      "frame_start_seconds": 1.8,
+      "gold_pixels": 10991,
+      "mean_red_over_blue": 48.376
+    },
+    {
+      "frame": 57,
+      "frame_start_seconds": 1.9,
+      "gold_pixels": 8735,
+      "mean_red_over_blue": 66.425
+    },
+    {
+      "frame": 60,
+      "frame_start_seconds": 2.0,
+      "gold_pixels": 0,
+      "mean_red_over_blue": 0.0
+    },
+    {
+      "frame": 63,
+      "frame_start_seconds": 2.1,
+      "gold_pixels": 0,
+      "mean_red_over_blue": 0.0
+    },
+    {
+      "frame": 65,
+      "frame_start_seconds": 2.167,
+      "gold_pixels": 0,
+      "mean_red_over_blue": 0.0
+    },
+    {
+      "frame": 95,
+      "frame_start_seconds": 3.167,
+      "gold_pixels": 0,
+      "mean_red_over_blue": 0.0
+    }
+  ]
+}

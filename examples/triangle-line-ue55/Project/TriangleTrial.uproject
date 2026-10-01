@@ -1,0 +1,13 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.5",
+  "Description": "Isolated UE5.5 triangle VFX trial",
+  "Plugins": [
+    {"Name": "PythonScriptPlugin", "Enabled": true},
+    {"Name": "EditorScriptingUtilities", "Enabled": true},
+    {"Name": "Niagara", "Enabled": true},
+    {"Name": "CascadeToNiagaraConverter", "Enabled": true},
+    {"Name": "MovieRenderPipeline", "Enabled": true},
+    {"Name": "AndroidFileServer", "Enabled": false}
+  ]
+}

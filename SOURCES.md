@@ -37,7 +37,7 @@
 - [Using Texture Masks](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-texture-masks-in-unreal-engine)：数据遮罩通道和 sRGB。
 - [Particle Expressions](https://dev.epicgames.com/documentation/en-us/unreal-engine/particle-expressions) 与 [Niagara Renderers](https://dev.epicgames.com/documentation/en-us/unreal-engine/niagara-renderers)：运行时应在用户对应版本继续核对的绑定参考；本次检索未完整取得这两页正文。
 
-本次仅验证仓库和 skill 文本；没有宣称实际 UE 画面、所有 API 或工具连接已验证。
+以上是前期 skill 组合时的验证范围。当时仅验证仓库和文本；后续实际制作的验证见下方“UE5.5 单层制作”。
 
 ## 本次增加：单层理解与简单中文
 
@@ -58,3 +58,20 @@
 新增脚本仅将既有图片嵌入离线 HTML；彩色与去色预览共用同一源图，不改变像素，不自动抽取真实图层。默认图卡是原创圆环示意，不是 UE 渲染或游戏截图。
 
 新增验证范围：两个 skill 的结构、支持文件引用、图卡包装和浏览器显示/交互；没有把推测视作原作者资产，也没有宣称 UE 画面已验证。
+
+## 本次增加：UE5.5 单层制作
+
+用户要求从观察、原理继续到实际贴图、材质、粒子和 UE 预览。在已查看的候选中，没有找到同时覆盖 UE5.5、少量逐层制作、简明中文、保存重开与实际预览确认的完整流程，因此新建 [ue55-vfx-layer-production](.agents/skills/ue55-vfx-layer-production/SKILL.md)。这是本仓库原创流程，不额外堆叠通用 skill。
+
+继续核对了前述 Epic MCP 与 VibeUE 路线：使用它们之前须验证工具连接、目标引擎版本和依赖；当前 UE5.5 工程不假定具备新的引擎工具集，也没有复制或安装候选项目。本轮采用 UE5.5 自带的编辑器 Python、材质编辑库、CascadeToNiagaraConverter 转换上下文与 Movie Render Queue。
+
+| 技术依据 | 用在哪里 |
+| --- | --- |
+| [UE5.5 MaterialEditingLibrary](https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/MaterialEditingLibrary?application_version=5.5) | 创建连线、编译材质、设置实例 |
+| [UE5.5 FXConverterUtilitiesLibrary](https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/FXConverterUtilitiesLibrary?application_version=5.5) | 原生 Niagara 转换上下文与类型正确的输入 |
+| 本机 UE5.5.4 `CascadeToNiagaraConverter/Content/Python` | 核对模块路径、版本、枚举与尺寸开关；未复制引擎代码到仓库 |
+| 本机 UE5.5.4 Niagara / MovieRenderPipeline API 与源码 | 核对生命周期轨道、缓存读取和异步录制回调；按实际运行结果修正 |
+
+新增验证范围：金色细三角原生资产在 **UE5.5.4-40574608** 创建、编译、保存、新进程重开、CPU 粒子缓存读取，以及 Movie Render Queue 实际 PNG 帧与 MP4。其余结构示例与第三方 skill 不因这个测试自动获得兼容性证明。失败的纯 commandlet、NullRHI 场景保存和旧录制路径保留在本地排错记录，不作为成功验证。
+
+源贴图是原创矢量几何导出，UE 资产与短片是本轮自行制作；不包含用户参考视频或原作者原始资产。颜色和淡出节奏明确标为试做，隐藏的原始制作方法仍是推测。

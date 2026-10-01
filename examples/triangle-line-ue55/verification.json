@@ -1,0 +1,172 @@
+{
+  "engine": "5.5.4-40574608+++UE5+Release-5.5",
+  "assets": {
+    "T_TriangleLine": "/Game/TriangleLine/T_TriangleLine.T_TriangleLine",
+    "M_TriangleGold": "/Game/TriangleLine/M_TriangleGold.M_TriangleGold",
+    "MI_TriangleGold": "/Game/TriangleLine/MI_TriangleGold.MI_TriangleGold",
+    "NS_TriangleLine": "/Game/TriangleLine/NS_TriangleLine.NS_TriangleLine",
+    "M_TrialFloor": "/Game/TriangleLine/M_TrialFloor.M_TrialFloor",
+    "L_TriangleTrial": "/Game/TriangleLine/L_TriangleTrial.L_TriangleTrial",
+    "LS_TriangleTrial": "/Game/TriangleLine/LS_TriangleTrial.LS_TriangleTrial"
+  },
+  "samples": [
+    {
+      "seconds": 0.033333,
+      "active": true,
+      "captured": true,
+      "particle_count": 1,
+      "age": [
+        0.03333333507180214
+      ],
+      "lifetime": [
+        2.0
+      ],
+      "sprite_size_cm": [
+        [
+          300.0,
+          300.0
+        ]
+      ]
+    },
+    {
+      "seconds": 0.1,
+      "active": true,
+      "captured": true,
+      "particle_count": 1,
+      "age": [
+        0.10000000894069672
+      ],
+      "lifetime": [
+        2.0
+      ],
+      "sprite_size_cm": [
+        [
+          300.0,
+          300.0
+        ]
+      ]
+    },
+    {
+      "seconds": 0.2,
+      "active": true,
+      "captured": true,
+      "particle_count": 1,
+      "age": [
+        0.20000000298023224
+      ],
+      "lifetime": [
+        2.0
+      ],
+      "sprite_size_cm": [
+        [
+          300.0,
+          300.0
+        ]
+      ]
+    },
+    {
+      "seconds": 1.0,
+      "active": true,
+      "captured": true,
+      "particle_count": 1,
+      "age": [
+        1.0000003576278687
+      ],
+      "lifetime": [
+        2.0
+      ],
+      "sprite_size_cm": [
+        [
+          300.0,
+          300.0
+        ]
+      ]
+    },
+    {
+      "seconds": 1.7,
+      "active": true,
+      "captured": true,
+      "particle_count": 1,
+      "age": [
+        1.6999996900558472
+      ],
+      "lifetime": [
+        2.0
+      ],
+      "sprite_size_cm": [
+        [
+          300.0,
+          300.0
+        ]
+      ]
+    },
+    {
+      "seconds": 1.9,
+      "active": true,
+      "captured": true,
+      "particle_count": 1,
+      "age": [
+        1.8999994993209839
+      ],
+      "lifetime": [
+        2.0
+      ],
+      "sprite_size_cm": [
+        [
+          300.0,
+          300.0
+        ]
+      ]
+    },
+    {
+      "seconds": 2.0,
+      "active": true,
+      "captured": true,
+      "particle_count": 1,
+      "age": [
+        1.9999994039535522
+      ],
+      "lifetime": [
+        2.0
+      ],
+      "sprite_size_cm": [
+        [
+          300.0,
+          300.0
+        ]
+      ]
+    },
+    {
+      "seconds": 2.033333,
+      "active": true,
+      "captured": true,
+      "particle_count": 0,
+      "age": [],
+      "lifetime": [],
+      "sprite_size_cm": []
+    },
+    {
+      "seconds": 2.166667,
+      "active": false,
+      "captured": false
+    },
+    {
+      "seconds": 2.2,
+      "active": false,
+      "captured": false
+    }
+  ],
+  "material": {
+    "texture_srgb": false,
+    "texture_compression": "<TextureCompressionSettings.TC_MASKS: 2>",
+    "blend_mode": "<BlendMode.BLEND_ADDITIVE: 3>",
+    "shading_model": "<MaterialShadingModel.MSM_UNLIT: 0>",
+    "scalar_parameters": {
+      "GlowStrength": 8.0,
+      "Visibility": 1.0,
+      "FadeInFraction": 0.10000000149011612,
+      "FadeOutFraction": 0.15000000596046448
+    }
+  },
+  "passed": true
+}
