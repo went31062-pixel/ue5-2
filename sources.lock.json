@@ -1,0 +1,50 @@
+{
+  "retrieved_on": "2026-10-01",
+  "sources": [
+    {
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "d4b0e35550c55ae70bdfcab4ef5a0e94610438a9",
+      "path": "skills/unreal/unreal-niagara/SKILL.md",
+      "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/d4b0e35550c55ae70bdfcab4ef5a0e94610438a9/skills/unreal/unreal-niagara/SKILL.md",
+      "local_path": "third_party/gamedev-skills/unreal-niagara.md",
+      "git_blob_sha": "85abff3db11af40facb2f6c0974cc1506b74340f",
+      "modified": false
+    },
+    {
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "d4b0e35550c55ae70bdfcab4ef5a0e94610438a9",
+      "path": "skills/disciplines/shader-programming/SKILL.md",
+      "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/d4b0e35550c55ae70bdfcab4ef5a0e94610438a9/skills/disciplines/shader-programming/SKILL.md",
+      "local_path": "third_party/gamedev-skills/shader-programming.md",
+      "git_blob_sha": "c7f80eaa64c9fd87b5d9aabf158a1dd3c7ec605e",
+      "modified": false
+    },
+    {
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "d4b0e35550c55ae70bdfcab4ef5a0e94610438a9",
+      "path": "skills/disciplines/create-game-assets/SKILL.md",
+      "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/d4b0e35550c55ae70bdfcab4ef5a0e94610438a9/skills/disciplines/create-game-assets/SKILL.md",
+      "local_path": "third_party/gamedev-skills/create-game-assets.md",
+      "git_blob_sha": "44fed75da429247eff03a33f0f4987c020aa4be6",
+      "modified": false
+    },
+    {
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "d4b0e35550c55ae70bdfcab4ef5a0e94610438a9",
+      "path": "LICENSE",
+      "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/d4b0e35550c55ae70bdfcab4ef5a0e94610438a9/LICENSE",
+      "local_path": "third_party/gamedev-skills/LICENSE",
+      "git_blob_sha": "c7fc0c6d59cb8129a0e30fe13f5a6118f3933c44",
+      "modified": false
+    },
+    {
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "d4b0e35550c55ae70bdfcab4ef5a0e94610438a9",
+      "path": "NOTICE",
+      "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/d4b0e35550c55ae70bdfcab4ef5a0e94610438a9/NOTICE",
+      "local_path": "third_party/gamedev-skills/NOTICE",
+      "git_blob_sha": "d4204881c3f79f39151a53a6aae476b188a8c51f",
+      "modified": false
+    }
+  ]
+}

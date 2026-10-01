@@ -1,0 +1,4 @@
+interface:
+  display_name: "UE5 特效分步制作"
+  short_description: "从需求、贴图和材质到 Niagara，每次处理一个目标并依据实际画面调整"
+  default_prompt: "使用 $ue5-vfx-step-by-step 帮我做 UE5 特效，从当前进度开始，每次只给当前阶段的少量操作。"
